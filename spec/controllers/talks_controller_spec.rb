@@ -30,6 +30,7 @@ RSpec.describe TalksController, type: :controller do
       end
 
       it "returns http success" do
+        puts response
         expect(response).to have_http_status(:success)
       end
 
