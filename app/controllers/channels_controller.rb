@@ -31,8 +31,6 @@ class ChannelsController < ApplicationController
 
   def set_channel
     @channel = Channel.find(params[:id])
-    puts "ccccccc"
-    puts params.inspect
   end
 
   def channel_params
