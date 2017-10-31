@@ -5,9 +5,21 @@
         <%= @team.slug %>
       </span>
       <% if can? :destroy, @team %>
-        <a class="right team_icon remove_team" href="#">
+        
+        <!-- Dropdown Trigger -->
+        <a class='right team_icon dropdown-button' href='#' data-constrainwidth="false" data-gutter="-55" data-activates='teams_options' data-beloworigin="true">
           <i class="material-icons" id="<%= @team.id %>">settings</i>
         </a>
+        <!-- Dropdown Structure -->
+        <ul id='teams_options' class='dropdown-content' >
+          <li>
+            <a href="#" class="remove_team">Remove</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#sign_out_modal" class="sign_out_team">Sign-out</a>
+          </li>
+        </ul>
         <% end %>
     </div>
   </li>
