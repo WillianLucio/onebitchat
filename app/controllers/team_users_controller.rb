@@ -15,13 +15,9 @@ class TeamUsersController < ApplicationController
   end
 
   def destroy
-    puts "---------"
-    puts TeamUser.last.inspect
-
-    # authorize! :destroy, @team_user
+    authorize! :destroy, @team_user
     
     @team_user.destroy
-    puts "bbb"
     
     respond_to do |format|
       format.json { render json: true }
