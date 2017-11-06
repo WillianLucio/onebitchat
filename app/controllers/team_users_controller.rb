@@ -4,6 +4,7 @@ class TeamUsersController < ApplicationController
   def create
     @team_user = TeamUser.new(team_user_params)
     authorize! :create, @team_user
+    User.invite!(:email => "kamilaguerra999@gmail.com", :name => "Teste")
 
     respond_to do |format|
       if @team_user.save
